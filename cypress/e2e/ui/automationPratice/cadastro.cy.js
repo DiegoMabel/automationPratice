@@ -4,7 +4,7 @@ it('teste 01 cadastro com sucesso', () => {
     cy.visit('/')
     cy.get('.shop-menu > .nav > :nth-child(4) > a').click()
     cy.get('[data-qa="signup-name"]').type('Abraão de Isac e Jaco')
-    cy.get('[data-qa="signup-email"]').type('000123deoliveira4@bmail.com')
+    cy.get('[data-qa="signup-email"]').type('0000123deoliveira4@bmail.com')
     cy.get('[data-qa="signup-button"]').click()
     cy.get('[data-qa="password"]').type('123456')
     cy.get('[data-qa="days"]').select('5')
