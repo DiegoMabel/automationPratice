@@ -1,10 +1,11 @@
+const faker = require('faker-br');
 describe('teste na tela de cadastro', () => {
     
 it('teste 01 cadastro com sucesso', () => {
     cy.visit('/')
     cy.get('.shop-menu > .nav > :nth-child(4) > a').click()
-    cy.get('[data-qa="signup-name"]').type('Abraão de Isac e Jaco')
-    cy.get('[data-qa="signup-email"]').type('0000123deoliveira4@bmail.com')
+    cy.get('[data-qa="signup-name"]').type(faker.name.firstName())
+    cy.get('[data-qa="signup-email"]').type(faker.internet.email())
     cy.get('[data-qa="signup-button"]').click()
     cy.get('[data-qa="password"]').type('123456')
     cy.get('[data-qa="days"]').select('5')
@@ -23,10 +24,6 @@ it('teste 01 cadastro com sucesso', () => {
     cy.get('[data-qa="mobile_number"]').type('85988888888')
     cy.get('[data-qa="create-account"]').click()
     cy.url().should('include','account_created')
-
-
-
-    
 });
 
 });
